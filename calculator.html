@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <link rel ="stylesheet" type = "text/css" href ="style.css">
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="Inputbox" value="0"/>
+                </td>
+            </tr>
+            <tr>
+                <td onclick ="digitBtnPressed(7)">7</td>
+                <td onclick="digitBtnPressed(8)">8</td>
+                <td onclick="digitBtnPressed(9)">9</td>
+                <td onclick="operatorBtnPressed('*')">*</td>
+            </tr>
+            <tr>
+                <td onclick="digitBtnPressed(4)">4</td>
+                <td onclick="digitBtnPressed(5)">5</td>
+                <td onclick="digitBtnPressed(6)">6</td>
+                <td onclick="operatorBtnPressed('-')">-</td>
+            </tr>
+            <tr>
+                <td onclick="digitBtnPressed(1)">1</td> 
+                <td onclick="digitBtnPressed(2)">2</td>
+                <td onclick="digitBtnPressed(3)">3</td>
+                <td onclick="operatorBtnPressed('+')">+</td>
+            </tr>
+            <tr>
+            <td colspan="2" onclick="digitBtnPressed(0)">0</td>
+
+            <td onclick="btnACPressed()">AC</td>
+            <td onclick="operatorBtnPressed('/')">/</td>
+            </tr>
+            <tr>
+                <td colspan="4" onclick="equalsBtnpressed()">=</td>
+            </tr>
+        </table>
+
+        <script>
+            var newline = true; //Boolean variable.determines if the next thing the user types should be on a new line
+            var value1;
+            var currentOperator;
+
+            //Event handler for when any digit button is pressed
+            function digitBtnPressed(button){
+
+                if(newline){
+                    document.getElementById("Inputbox").value = button;
+                    newline = false;
+                } else {
+                     var currentValue = document.getElementById("Inputbox").value;
+               document.getElementById("Inputbox").value = currentValue + button;     
+                }   
+            }
+
+            //Event handler for when the AC button is pressed
+             function btnACPressed(){
+                document.getElementById("Inputbox").value = 0;
+                newline = true;
+             }
+
+             //Event handler for operator buttons
+             function operatorBtnPressed(Operator){
+                currentOperator = Operator;
+                value1 =parseInt (document.getElementById("Inputbox").value);
+                newline = true;
+             }
+
+             //Event handler for equals to button
+             function equalsBtnpressed(){
+                var value2 =parseInt(document.getElementById("Inputbox").value);
+                var finalTotal;
+
+                switch(currentOperator){
+                    case "+":
+                        finalTotal = value1 + value2;
+                        break;
+                    case "-":
+                        finalTotal = value1 - value2;
+                        break;
+                    case "/":
+                        finalTotal = value1 / value2;
+                        break;
+                    case "*":
+                        finalTotal = value1 * value2;
+                        break;
+                }
+                document.getElementById("Inputbox").value =finalTotal;
+                
+                value1 = 0;
+                newline = true;
+             }
+        </script>
+    </body>
+</html>

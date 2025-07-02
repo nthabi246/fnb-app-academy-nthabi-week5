@@ -1,0 +1,89 @@
+body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .calculator {
+            background: #2c3e50;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 8px;
+        }
+
+        #inputBox {
+            width: 100%;
+            height: 60px;
+            font-size: 24px;
+            text-align: right;
+            padding: 0 15px;
+            border: none;
+            background: #34495e;
+            color: white;
+            border-radius: 10px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        td {
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            vertical-align: middle;
+            background: #3498db;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        td:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        td:active {
+            transform: translateY(0);
+            background: #1f618d;
+        }
+
+        .operator {
+            background: #e74c3c !important;
+        }
+
+        .operator:hover {
+            background: #c0392b !important;
+        }
+
+        .equals {
+            background: #27ae60 !important;
+        }
+
+        .equals:hover {
+            background: #229954 !important;
+        }
+
+        .clear {
+            background: #f39c12 !important;
+        }
+
+        .clear:hover {
+            background: #e67e22 !important;
+        }
+
+        .zero {
+            width: 148px;
+        }
